@@ -1,1 +1,4 @@
-
+naomiL, timN, ivanG, nafM -- 2025-04-01
+- design doc changes:
+  - changed user registration table 
+  - revised description
