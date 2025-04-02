@@ -14,13 +14,13 @@ def signup():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        
+
         if register_user(email, password):
-            session['user'] = email 
+            session['user'] = email
             return redirect(url_for('home'))
         else:
             flash("User already exists. Try logging in.", "danger")
-    
+
     return render_template('signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -28,18 +28,34 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        
+
         if authenticate_user(email, password):
-            session['user'] = email  
+            session['user'] = email
             return redirect(url_for('home'))
         else:
             flash("Invalid email or password. Please try again.", "danger")
-    
+
     return render_template('login.html')
+
+@app.route('/demo')
+def demo():
+    return render_template('demo.html')
+
+@app.route('/health')
+def health():
+    return render_template('health.html')
+
+@app.route('/lifestyle')
+def lifestyle():
+    return render_template("lifestyle.html")
+
+@app.route('/stats')
+def stats():
+    return render_template("stats.html")
 
 @app.route('/logout')
 def logout():
-    session.pop('user', None)  
+    session.pop('user', None)
     return redirect(url_for('home'))
 
 if __name__ == "__main__":
