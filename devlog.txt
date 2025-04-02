@@ -2,3 +2,7 @@ naomiL, timN, ivanG, nafM -- 2025-04-01
 - design doc changes:
   - changed user registration table 
   - revised description
+timN -- 2025-04-02 02:34
+* Updated requirements.txt
+* Updated templates
+* Working app with signup/login now
