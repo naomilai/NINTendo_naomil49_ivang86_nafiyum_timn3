@@ -14,32 +14,60 @@ def signup():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        
+
         if register_user(email, password):
-            session['user'] = email 
+            session['user'] = email
             return redirect(url_for('home'))
         else:
             flash("User already exists. Try logging in.", "danger")
-    
+
     return render_template('signup.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if get_redirect(): # focus on displaying msg if you are being redirected
+        set_redirect(False)
+        flash("You need to log in to access that page.", "danger")
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        
+
         if authenticate_user(email, password):
-            session['user'] = email  
+            session['user'] = email
             return redirect(url_for('home'))
         else:
             flash("Invalid email or password. Please try again.", "danger")
-    
+
     return render_template('login.html')
+
+@app.route('/demo')
+def demo():
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
+    return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user())
+
+@app.route('/health')
+def health():
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
+    return render_template('health.html', logged_in=is_logged_in(), user=get_logged_in_user())
+
+@app.route('/lifestyle')
+def lifestyle():
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
+    return render_template("lifestyle.html", logged_in=is_logged_in(), user=get_logged_in_user())
+
+@app.route('/stats')
+def stats():
+    return render_template("stats.html", logged_in=is_logged_in(), user=get_logged_in_user())
 
 @app.route('/logout')
 def logout():
-    session.pop('user', None)  
+    session.pop('user', None)
     return redirect(url_for('home'))
 
 if __name__ == "__main__":
