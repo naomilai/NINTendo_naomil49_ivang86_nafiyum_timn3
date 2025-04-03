@@ -6,6 +6,10 @@ from db_utils import *
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
 
+DB_FILE = os.path.join(os.path.dirname(__file__), "database.db")
+
+setup_db()
+
 @app.route('/')
 def home():
     return render_template('index.html', logged_in=is_logged_in(), user=get_logged_in_user())
