@@ -3,6 +3,7 @@ import sqlite3
 from flask import session
 
 users = {}
+redirected = False # this is a suboptimal barebones solution to display redirect messages, whoevers working on python plz optimize if you can, thank you<3 -naf
 
 def is_logged_in():
     return 'user' in session
@@ -12,9 +13,15 @@ def get_logged_in_user():
 
 def register_user(email, password):
     if email in users:
-        return False  
-    users[email] = password  
-    return True  
+        return False
+    users[email] = password
+    return True
 
 def authenticate_user(email, password):
-    return email in users and users[email] == password 
+    return email in users and users[email] == password
+
+def set_redirect(bool):
+    redirected = bool
+
+def get_redirect():
+    return redirected
