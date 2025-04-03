@@ -37,6 +37,22 @@ def login():
 
     return render_template('login.html')
 
+@app.route('/demo')
+def demo():
+    return render_template('demo.html')
+
+@app.route('/health')
+def health():
+    return render_template('health.html')
+
+@app.route('/lifestyle')
+def lifestyle():
+    return render_template("lifestyle.html")
+
+@app.route('/stats')
+def stats():
+    return render_template("stats.html")
+
 @app.route('/logout')
 def logout():
     session.pop('user', None)

@@ -2,7 +2,7 @@
 
 ## Roster
 - Naomi Lai (Project Manager): JS
-- Tim Ng: Database
+- Tim Ng: Database (SQL)
 - Naf Murtaza: HTML/CSS
 - Ivan Gontchar: Python
 
@@ -44,7 +44,7 @@ OR
 
   3. Ensure your virtual environment is activated
 
-  4. Access the repository by typing ```$ cd APInsomniacs__amandat109_jacobl153_kishiw2_naomil49/```
+  4. Access the repository by typing ```$ cd NINTendo_naomil49_ivang86_nafiyum_timn3```
 
   5. Type ```$ pip install -r requirements.txt``` to install the required modules
 
