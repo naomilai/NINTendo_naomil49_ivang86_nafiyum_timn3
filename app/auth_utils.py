@@ -5,6 +5,8 @@ from flask import session
 users = {} # temporary for now
 
 DB_FILE = os.path.join(os.path.dirname(__file__), "database.db")
+users = {}
+redirected = False # this is a suboptimal barebones solution to display redirect messages, whoevers working on python plz optimize if you can, thank you<3 -naf
 
 def is_logged_in():
     return 'user' in session
@@ -20,3 +22,9 @@ def register_user(email, password):
 
 def authenticate_user(email, password):
     return email in users and users[email] == password
+
+def set_redirect(bool):
+    redirected = bool
+
+def get_redirect():
+    return redirected
