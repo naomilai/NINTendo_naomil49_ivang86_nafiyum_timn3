@@ -24,6 +24,7 @@ def authenticate_user(email, password):
     return email in users and users[email] == password
 
 def set_redirect(bool):
+    global redirected
     redirected = bool
 
 def get_redirect():
