@@ -3,8 +3,8 @@
 console.log('this is javascript!');
 
 const ctx = document.getElementById('myChart');
-      
-new Chart(ctx, {
+
+new Chart(ctx, { // canvase element to render, options
     type: 'bar',
     data: {
     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
