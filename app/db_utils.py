@@ -2,6 +2,7 @@ import os
 import os.path
 import json
 import sqlite3
+from auth.utils import pass_hash, get_logged_in_user
 
 DB_FILE = os.path.join(os.path.dirname(__file__), "database.db")
 
@@ -22,6 +23,7 @@ def create_tables(db):
                 name_first TEXT NOT NULL COLLATE NOCASE
                 name_last TEXT NOT NULL COLLATE NOCASE
                 email TEXT NOT NULL UNIQUE COLLATE NOCASE
+                hash TEXT NOT NULL
                 dob DATE NOT NULL
                 profile JSON NOT NULL
             );
@@ -54,3 +56,17 @@ def print_table(db_name, table_name):
     finally:
         if conn:
             conn.close()
+
+#-----------------------------------------------------------------------------------------
+
+def create_user(name_first, name_last, email, dob, profile):
+    db = sqlite3.connect(DB_FILE)
+    try:
+        c = db.cursor()
+        c.execute("INSERT INTO users (name_first, name_last, email, hash, dob, profile)")
+        db.commit()
+    except sqlite3.IntegrityError as e:
+        print(name_first, name_last)
+        print(f"create user: {e}")
+    finally:
+        c.close()
