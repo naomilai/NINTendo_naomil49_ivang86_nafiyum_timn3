@@ -25,6 +25,9 @@ def signup():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    if get_redirect(): # focus on displaying msg if you are being redirected
+        set_redirect(False)
+        flash("You need to log in to access that page.", "danger")
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
@@ -39,19 +42,28 @@ def login():
 
 @app.route('/demo')
 def demo():
-    return render_template('demo.html')
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
+    return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user())
 
 @app.route('/health')
 def health():
-    return render_template('health.html')
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
+    return render_template('health.html', logged_in=is_logged_in(), user=get_logged_in_user())
 
 @app.route('/lifestyle')
 def lifestyle():
-    return render_template("lifestyle.html")
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
+    return render_template("lifestyle.html", logged_in=is_logged_in(), user=get_logged_in_user())
 
 @app.route('/stats')
 def stats():
-    return render_template("stats.html")
+    return render_template("stats.html", logged_in=is_logged_in(), user=get_logged_in_user())
 
 @app.route('/logout')
 def logout():
