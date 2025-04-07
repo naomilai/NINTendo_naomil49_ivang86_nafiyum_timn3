@@ -14,3 +14,6 @@ nafM -- 2025-04-02 11:45
 nafM -- 2025-04-03 11:43
 * Updated __init__.py
 * Updated auth_utils.py
+timN -- 2025-04-07 11:22
+* Created db_utils.py
+* Basic functions to create tables working
