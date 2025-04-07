@@ -14,3 +14,7 @@ nafM -- 2025-04-02 11:45
 nafM -- 2025-04-03 11:43
 * Updated __init__.py
 * Updated auth_utils.py
+ivanG -- 2025-04-07 11:44
+* Looked through dataset to plan how we will display info on site
+* Made planning notes in corresponding html files as to displaying stuff
+* Added a new page (not up and running yet) for potential introspection of dataset
