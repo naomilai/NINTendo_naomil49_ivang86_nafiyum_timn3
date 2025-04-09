@@ -21,3 +21,6 @@ ivanG -- 2025-04-07 11:44
 timN -- 2025-04-07 11:22
 * Created db_utils.py
 * Basic functions to create tables working
+ivanG -- 2025-04-09 11:42
+* Continued to map out the plan for our site information
+* Confer with PM about plan to start writing actual site text and leave space for graphs
