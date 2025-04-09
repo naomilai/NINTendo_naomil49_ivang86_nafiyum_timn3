@@ -31,8 +31,11 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if get_redirect(): # focus on displaying msg if you are being redirected
+        print("got redirect")
         set_redirect(False)
         flash("You need to log in to access that page.", "danger")
+    else:
+        print("no redirect")
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']

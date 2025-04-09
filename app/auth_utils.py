@@ -32,6 +32,7 @@ def check_password(pw_hash, password):
     return bcrypt.checkpw(password.encode('utf-8'), pw_hash)
 
 def set_redirect(bool):
+    global redirected
     redirected = bool
 
 def get_redirect():
