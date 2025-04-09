@@ -2,7 +2,7 @@ import os
 import os.path
 import json
 import sqlite3
-from auth.utils import pass_hash, get_logged_in_user
+from auth_utils import pass_hash, get_logged_in_user
 
 DB_FILE = os.path.join(os.path.dirname(__file__), "database.db")
 
