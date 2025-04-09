@@ -1,0 +1,10 @@
+/* css stylesheet for webpages */
+
+.mainbody { /* main paragraph content */
+  font-family: "Times New Roman", Times, serif;
+  font-size: 25px;
+  line-height: 2px;
+  padding-top:10%;
+  padding-right: 10%;
+  padding-left: 10%;
+}

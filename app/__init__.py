@@ -1,9 +1,14 @@
 from flask import Flask, render_template, request, redirect, session, url_for, flash
 import os
 from auth_utils import *
+from db_utils import *
 
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
+
+DB_FILE = os.path.join(os.path.dirname(__file__), "database.db")
+
+setup_db()
 
 @app.route('/')
 def home():
@@ -26,8 +31,11 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if get_redirect(): # focus on displaying msg if you are being redirected
+        print("got redirect")
         set_redirect(False)
         flash("You need to log in to access that page.", "danger")
+    else:
+        print("no redirect")
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']

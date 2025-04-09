@@ -18,3 +18,6 @@ ivanG -- 2025-04-07 11:44
 * Looked through dataset to plan how we will display info on site
 * Made planning notes in corresponding html files as to displaying stuff
 * Added a new page (not up and running yet) for potential introspection of dataset
+timN -- 2025-04-07 11:22
+* Created db_utils.py
+* Basic functions to create tables working
