@@ -33,3 +33,6 @@ nafM -- 2025-04-07 11:43
 ivanG -- 2025-04-09 11:42
 * Continued to map out the plan for our site information
 * Confer with PM about plan to start writing actual site text and leave space for graphs
+ivanG -- 2025-04-10 11:45
+* Started writing actual content text that the user will go through and read on our site
+* Close to done with most on info on family history of anxiety, and left space for graphs and interpretation
