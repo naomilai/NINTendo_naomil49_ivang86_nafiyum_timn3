@@ -8,3 +8,8 @@
   padding-right: 10%;
   padding-left: 10%;
 }
+
+.navbar-nav > li{ /* what im currently working on */
+  padding-left:30px;
+  padding-right:30px;
+}
