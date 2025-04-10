@@ -26,3 +26,14 @@ nafM -- 2025-04-07 11:43
 * upd singup.html
 * upd stats.html
 * create style.css
+naomiL -- 2025-04-10 11:42
+* worked on js
+  * seeing how line charts worked
+  * functions to access csv data (viewing by attribute, viewing all)
+  * experimented w passing infomation to html/js 
+
+DESIGN REVISIONS THUS FAR:
+* fixed user registration table to only include relevant information by removing column for social security
+* updated description to better reflect our project goals in a concise manner
+------------------------------------
+====================================
