@@ -3,13 +3,16 @@
 .mainbody { /* main paragraph content */
   font-family: "Times New Roman", Times, serif;
   font-size: 25px;
-  line-height: 2px;
-  padding-top:10%;
+  line-height: 50px;
   padding-right: 10%;
   padding-left: 10%;
 }
 
-.navbar-nav > li{ /* what im currently working on */
-  padding-left:30px;
-  padding-right:30px;
+.header { /* headers */
+  font-family: "Times New Roman", Times, serif; /* not final */
+  font-size: 30px;
+  line-height: 50px;
+  padding-right: 12%;
+  padding-left: 12%;
+  padding-top: 1.5%;
 }
