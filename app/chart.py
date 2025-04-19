@@ -11,9 +11,9 @@ def get_attribute(attribute): # returns all attribute data
     data = get_enchanced_anxiety()
     n = data[0].index(attribute) # index of attribute in each row
     new_data = []
-    for row in data:
+    for row in data[1:]:
         try:
-            add = row[n]
+            add = float(row[n])
             new_data.append(add)
         except ValueError:
             continue
@@ -25,7 +25,17 @@ def view_attributes(): # prints list of names
     for item in n:
         print(item, "\n")
 
-# view_attributes()
+def todict(x, y):
+    data = get_enchanced_anxiety()
+    x1 = data[0].index(x) #index of x in each row
+    y1 = data[0].index(y) # index of  y in each row
+    
+    new_x = []
+    new_y = []
+    for n in range(len(x)):
+        d.append([x[n], y[n]])
+    d = sorted(d)
+    return d
 
 
 app = Flask(__name__)
@@ -34,8 +44,9 @@ app = Flask(__name__)
 def route():
     anx_data = get_attribute('Anxiety Level (1-10)')
     age_data = get_attribute('Age')
-    print(age_data)
-    return render_template('testing_chart.html')
+    # d = todict('Anxiety Level (1-10)', 'Age')
+    # print(d)
+    return render_template('testing_chart.html', anx_data = anx_data, age_data = age_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
