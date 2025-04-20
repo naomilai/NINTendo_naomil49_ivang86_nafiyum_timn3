@@ -85,6 +85,8 @@ new Chart(age_means, {
   },
 });
 
+// console.log(gender_data)
+
 // const gender_all = document.getElementById('gender_all');
 // new Chart(gender_all,{
 //   type: 'line',

@@ -19,7 +19,8 @@ function s(info, y){ // sorts info by y
   return new_dict;
 }
 
-function mean(info, y){ // returns means of info by y
+function mean(info, arr){ // returns means of info by y
+  y = arr.slice()
   y.sort()
   counter = [info[0],1]
   means = []
@@ -28,7 +29,7 @@ function mean(info, y){ // returns means of info by y
       counter[0] += info[n]
       counter[1] ++
     } else{
-      console.log("age:",y[n-1],"anx",info[n],counter,counter[0] / counter[1])
+      // console.log("age:",y[n-1],"anx",info[n],counter,counter[0] / counter[1])
       means.push(counter[0] / counter[1]);
       counter[0] = info[n];
       counter[1] = 1;
@@ -37,12 +38,13 @@ function mean(info, y){ // returns means of info by y
   }
 
   means = means.map((x) => Math.round(x*10) / 10);
-  console.log(means);
   return means;
 }
 
-function r (a){ // remove extra values
+function r(arr){ // remove extra values
+  a = arr.slice()
   a.sort()
+  // console.log(a)
   d = []
   for(const n in a){
       num = a[n]
@@ -57,44 +59,59 @@ function r (a){ // remove extra values
 // charts
 
 // example chart
-const ctx = document.getElementById('myChart');
-new Chart(ctx, { // canvase element to render, options
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-    }]
-  },
-  options: {
-  scales: {
-      y: {
-      beginAtZero: true
-      }
-  }
-  }
-});
+// const ctx = document.getElementById('myChart');
+// new Chart(ctx, { // canvase element to render, options
+//   type: 'bar',
+//   data: {
+//     labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+//     datasets: [{
+//         label: '# of Votes',
+//         data: [12, 19, 3, 5, 2, 3],
+//         borderWidth: 1
+//     }]
+//   },
+//   options: {
+//   scales: {
+//       y: {
+//       beginAtZero: true
+//       }
+//   }
+//   }
+// });
 
-// all age/anxiety data
-const original = document.getElementById('original');
-new Chart(original,{
-  type: 'line',
-  data: {
-    labels: age_data,
-    datasets: [
-      {
-        label: 'anxiety',
-        data: s(anx_data, age_data),
-      }
-    ],
-  },
-});
 
-// means of age/anxiety data
-const d_age = document.getElementById('line_chart');
-new Chart(d_age, {
+// const c3 = document.getElementById('c3');
+// new Chart(c3, {
+//   type: 'bar',
+//   data: {
+//     labels: [5,6,7],
+//     // labels: r(gender_data),
+//     datasets: [{
+//       label: 'anxiety level',
+//       data: [1, 2, 3],
+//     }]
+//   }
+// })
+
+// const c2 = document.getElementById('c2')
+// new Chart(c2,{
+//   type: 'line',
+//   data: {
+//     labels: age_data,
+//     // labels: age_data.slice(0,4),
+//     // labels: [5,6,7,8],
+//     datasets: [
+//       {
+//         label: 'anxiety',
+//         // data: [1,2,3,4],
+//         data: s(anx_data, age_data),
+//       }
+//     ],
+//   },
+// });
+
+const c1 = document.getElementById('c3')
+new Chart(c1, {
   type: 'line',
   data: {
     labels: r(age_data), 
@@ -106,5 +123,3 @@ new Chart(d_age, {
     ],
   },
 });
-
-export {s, mean, r};

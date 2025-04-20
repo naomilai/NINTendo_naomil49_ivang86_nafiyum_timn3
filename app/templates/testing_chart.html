@@ -6,8 +6,10 @@
     
     <!-- js data variables -->
     <script>
-      var age_data = {{ age_data }};
       var anx_data = {{ anx_data }};
+      var age_data = {{ age_data }};
+      var gender_data = {{ gender_data | safe }};
+      // var occupation_data = {{ occupation_data }};
     </script>
   </head>
 
@@ -17,13 +19,19 @@
     <!-- <div style="width: 800px;">
       <canvas id="myChart"></canvas>
     </div> -->
+    <!-- anx_data <br> {{ anx_data }} <br><br> -->
+    <!-- age_data <br> {{ age_data }} -->
 
     <div>
-      <canvas id="original"></canvas>
+      <canvas id="c3"></canvas>
     </div>
 
     <div>
-      <canvas id="line_chart"></canvas>
+      <canvas id="c2"></canvas>
+    </div>
+
+    <div>
+      <canvas id="c1"></canvas>
     </div>
 
     <script src="../static/js/testing_chart.js"></script>
