@@ -14,6 +14,10 @@ nafM -- 2025-04-02 11:45
 nafM -- 2025-04-03 11:43
 * Updated __init__.py
 * Updated auth_utils.py
+ivanG -- 2025-04-07 11:44
+* Looked through dataset to plan how we will display info on site
+* Made planning notes in corresponding html files as to displaying stuff
+* Added a new page (not up and running yet) for potential introspection of dataset
 timN -- 2025-04-07 11:22
 * Created db_utils.py
 * Basic functions to create tables working
@@ -26,14 +30,18 @@ nafM -- 2025-04-07 11:43
 * upd singup.html
 * upd stats.html
 * create style.css
+ivanG -- 2025-04-09 11:42
+* Continued to map out the plan for our site information
+* Confer with PM about plan to start writing actual site text and leave space for graphs
+ivanG -- 2025-04-10 11:45
+* Started writing actual content text that the user will go through and read on our site
+* Close to done with most on info on family history of anxiety, and left space for graphs and interpretation
 naomiL -- 2025-04-10 11:42
 * worked on js
   * seeing how line charts worked
   * functions to access csv data (viewing by attribute, viewing all)
-  * experimented w passing infomation to html/js 
+  * experimented w passing infomation to html/js
 
 DESIGN REVISIONS THUS FAR:
 * fixed user registration table to only include relevant information by removing column for social security
 * updated description to better reflect our project goals in a concise manner
-------------------------------------
-====================================
