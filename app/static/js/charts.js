@@ -1,7 +1,6 @@
-console.log('testing chart.js')
+console.log('charts.js')
 
 // methods
-
 function s(info, y){ // sorts info by y
   var d = []; 
   for (const n in info){
@@ -56,55 +55,47 @@ function r (a){ // remove extra values
 
 // charts
 
-// example chart
-const ctx = document.getElementById('myChart');
-new Chart(ctx, { // canvase element to render, options
-  type: 'bar',
-  data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-    datasets: [{
-        label: '# of Votes',
-        data: [12, 19, 3, 5, 2, 3],
-        borderWidth: 1
-    }]
-  },
-  options: {
-  scales: {
-      y: {
-      beginAtZero: true
-      }
-  }
-  }
-});
-
-// all age/anxiety data
-const original = document.getElementById('original');
-new Chart(original,{
+// demographics
+// age
+const age_all = document.getElementById('age_all');
+new Chart(age_all,{
   type: 'line',
   data: {
     labels: age_data,
     datasets: [
       {
-        label: 'anxiety',
+        label: 'anxiety level',
         data: s(anx_data, age_data),
       }
     ],
   },
 });
 
-// means of age/anxiety data
-const d_age = document.getElementById('line_chart');
-new Chart(d_age, {
+const age_means = document.getElementById('age_means');
+new Chart(age_means, {
   type: 'line',
   data: {
     labels: r(age_data), 
     datasets: [
       {
-      label: 'anx_data',
+      label: 'anxiety level',
       data: mean(anx_data, age_data),
       }
     ],
   },
 });
 
-export {s, mean, r};
+// const gender_all = document.getElementById('gender_all');
+// new Chart(gender_all,{
+//   type: 'line',
+//   data: {
+//     labels: gender_data,
+//     datasets: [
+//       {
+//         label: 'anxiety level',
+//         data: s(anx_data, gender_data),
+//       }
+//     ],
+//   },
+// });
+

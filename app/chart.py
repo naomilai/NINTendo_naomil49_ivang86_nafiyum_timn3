@@ -1,4 +1,3 @@
-# method: enhanced anxiety BIG !!
 import csv
 from flask import Flask, render_template
 
@@ -38,15 +37,15 @@ def todict(x, y):
     return d
 
 
-app = Flask(__name__)
+# app = Flask(__name__)
 
-@app.route('/')
-def route():
-    anx_data = get_attribute('Anxiety Level (1-10)')
-    age_data = get_attribute('Age')
-    # d = todict('Anxiety Level (1-10)', 'Age')
-    # print(d)
-    return render_template('testing_chart.html', anx_data = anx_data, age_data = age_data)
+# @app.route('/')
+# def route():
+#     anx_data = get_attribute('Anxiety Level (1-10)')
+#     age_data = get_attribute('Age')
+#     # d = todict('Anxiety Level (1-10)', 'Age')
+#     # print(d)
+#     return render_template('testing_chart.html', anx_data = anx_data, age_data = age_data)
 
-if __name__ == "__main__":
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     app.run(debug=True)

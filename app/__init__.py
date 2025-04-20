@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, session, url_for, f
 import os
 from auth_utils import *
 from db_utils import *
+from chart import *
 
 app = Flask(__name__)
 app.secret_key = os.urandom(32)
@@ -50,10 +51,19 @@ def login():
 
 @app.route('/demo')
 def demo():
-    if not is_logged_in():
-        set_redirect(True)
-        return redirect(url_for('login'))
-    return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user())
+    # if not is_logged_in():
+    #     set_redirect(True)
+    #     return redirect(url_for('login'))
+    anx_data = get_attribute('Anxiety Level (1-10)')
+    age_data = get_attribute('Age')
+    gender_data = get_attribute('Gender')
+    occupation_data = get_attribute('Occupation')
+    return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user(),
+    anx_data = anx_data, 
+    age_data = age_data,
+    gender_data = gender_data,
+    occupation_data = occupation_data
+    )
 
 @app.route('/health')
 def health():
