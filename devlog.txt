@@ -41,6 +41,9 @@ naomiL -- 2025-04-10 11:42
   * seeing how line charts worked
   * functions to access csv data (viewing by attribute, viewing all)
   * experimented w passing infomation to html/js
+ivanG -- 2025-04-20 14:16
+* Continued writing the actual analysis text and leaving area for graphs and analysis
+* Finished with the health page for now, and will move on to another shortly
 
 DESIGN REVISIONS THUS FAR:
 * fixed user registration table to only include relevant information by removing column for social security
