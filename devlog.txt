@@ -44,6 +44,8 @@ naomiL -- 2025-04-10 11:42
 ivanG -- 2025-04-20 14:16
 * Continued writing the actual analysis text and leaving area for graphs and analysis
 * Finished with the health page for now, and will move on to another shortly
+ivanG -- 2025-04-20 17:00
+* Finished writing actual info and analysis for demographics page
 
 DESIGN REVISIONS THUS FAR:
 * fixed user registration table to only include relevant information by removing column for social security
