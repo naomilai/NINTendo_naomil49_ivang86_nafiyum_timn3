@@ -1,28 +1,42 @@
-<!-- testing chart.js!! -->
 <!DOCTYPE html>
 <html>
   <head>
     <title> Testing </title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- js data variables -->
+    <script>
+      var anx_data = {{ anx_data }};
+      var age_data = {{ age_data }};
+      var gender_data = {{ gender_data | safe }};
+      // var occupation_data = {{ occupation_data }};
+    </script>
   </head>
 
   <body>
-      Hello, this is testing_chart.html
+    This is testing_chart.html <br><br>
 
-      <div style="width: 800px;">
-        <canvas id="myChart"></canvas>
-      </div>
+    <!-- <div style="width: 800px;">
+      <canvas id="myChart"></canvas>
+    </div> -->
+    <!-- anx_data <br> {{ anx_data }} <br><br> -->
+    <!-- age_data <br> {{ age_data }} -->
 
-      This is after testing
-      for each: toggle between stress + anxiety level?
+    <i> c3</i>
+    <div>
+      <canvas id="c3"></canvas>
+    </div>
 
-      DEMOGRAPHICS: age (line chart), gender (histogram), occupation (bar, descending order + limit)
-      LIFESTYLE: sleep hours (line), physical activity (line), caffeine or alcohol (line), smoking (histogram)
+    <i> c2</i>
+    <div>
+      <canvas id="c2"></canvas>
+    </div>
 
-      <div style="width: 800px;">
-        <canvas id="line_chart"></canvas>
-      </div>
+    <i> c1</i>
+    <div>
+      <canvas id="c1"></canvas>
+    </div>
 
-      <script src="../static/js/testing_chart.js"></script>
+    <script src="../static/js/testing_chart.js"></script>
   </body>
 </html>
