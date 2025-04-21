@@ -54,11 +54,12 @@ def demo():
     # if not is_logged_in():
     #     set_redirect(True)
     #     return redirect(url_for('login'))
+
     anx_data = get_attribute('Anxiety Level (1-10)')
     age_data = get_attribute('Age')
     gender_data = get_attribute('Gender')
     occupation_data = get_attribute('Occupation')
-    
+
     return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user(),
     anx_data = anx_data, 
     age_data = age_data,
@@ -68,10 +69,21 @@ def demo():
 
 @app.route('/health')
 def health():
-    if not is_logged_in():
-        set_redirect(True)
-        return redirect(url_for('login'))
-    return render_template('health.html', logged_in=is_logged_in(), user=get_logged_in_user())
+    # if not is_logged_in():
+    #     set_redirect(True)
+    #     return redirect(url_for('login'))
+
+    anx_data = get_attribute('Anxiety Level (1-10)')
+    family_data = get_attribute('Family History of Anxiety')
+    medication_data = get_attribute('Medication')
+    therapy_data = get_attribute('Therapy Sessions (per month)')
+
+    return render_template('health.html', logged_in=is_logged_in(), user=get_logged_in_user(),
+    anx_data = anx_data,
+    family_data = family_data,
+    medication_data = medication_data,
+    therapy_data = therapy_data
+    )
 
 @app.route('/lifestyle')
 def lifestyle():

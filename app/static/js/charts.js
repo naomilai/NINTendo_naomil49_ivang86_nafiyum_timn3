@@ -58,7 +58,6 @@ options = {
   animation: false,
 }
 
-
 // charts
 // demographics
 // age
@@ -121,6 +120,22 @@ new Chart(occupation_means,{
     datasets: [{
       label: 'anxiety level',
       data: mean(anx_data, occupation_data),
+    }]
+  },
+  options: {
+    animation: false,
+  },
+})
+
+// health
+const family_history = document.getElementById('family_history');
+new Chart(family_history,{
+  type: 'bar',
+  data: {
+    labels: family_data,
+    datasets: [{
+      label: 'anxiety level',
+      data: anx_data,
     }]
   },
   options: {
