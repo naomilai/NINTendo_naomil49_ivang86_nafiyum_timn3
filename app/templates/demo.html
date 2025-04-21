@@ -13,8 +13,8 @@
     <script>
       var anx_data = {{ anx_data }};
       var age_data = {{ age_data }};
-      var gender_data = {{ gender_data }};
-      var occupation_data = {{ occupation_data }};
+      var gender_data = {{ gender_data | safe }};
+      var occupation_data = {{ occupation_data | safe }};
     </script>
 </head>
 <body>
@@ -56,12 +56,12 @@
         <canvas id="age_means"></canvas>
       </div>
 
-      <div> <!-- all gender data-->
-        <canvas id="gender_all"></canvas>
-      </div>
-
       <div> <!--- gender w means-->
         <canvas id="gender_means"></canvas>
+      </div>
+
+      <div> <!--- occupation w means-->
+        <canvas id="occupation_means"></canvas>
       </div>
 
       <script src="../static/js/charts.js"></script>

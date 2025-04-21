@@ -29,7 +29,7 @@ function mean(info, arr){ // returns means of info by y
       counter[0] += info[n]
       counter[1] ++
     } else{
-      // console.log("age:",y[n-1],"anx",info[n],counter,counter[0] / counter[1])
+      console.log("age:",y[n-1],"anx",info[n],counter,counter[0] / counter[1])
       means.push(counter[0] / counter[1]);
       counter[0] = info[n];
       counter[1] = 1;
@@ -56,6 +56,11 @@ function r(arr){ // remove extra values
   return d
 }
 
+// styling
+options = {
+  animation: false,
+}
+
 // charts
 
 // example chart
@@ -79,19 +84,20 @@ function r(arr){ // remove extra values
 //   }
 // });
 
-
-// const c3 = document.getElementById('c3');
-// new Chart(c3, {
-//   type: 'bar',
-//   data: {
-//     labels: [5,6,7],
-//     // labels: r(gender_data),
-//     datasets: [{
-//       label: 'anxiety level',
-//       data: [1, 2, 3],
-//     }]
-//   }
-// })
+const c3 = document.getElementById('c3');
+new Chart(c3, {
+  type: 'bar',
+  data: {
+    // labels: gender_data,
+    labels: r(gender_data),
+    datasets: [{
+      label: 'anxiety level',
+      // data: anx_data,
+      data: mean(anx_data, gender_data),
+    }]
+  },
+  options: options,
+})
 
 // const c2 = document.getElementById('c2')
 // new Chart(c2,{
@@ -108,18 +114,20 @@ function r(arr){ // remove extra values
 //       }
 //     ],
 //   },
+//   options: options,
 // });
 
-const c1 = document.getElementById('c3')
-new Chart(c1, {
-  type: 'line',
-  data: {
-    labels: r(age_data), 
-    datasets: [
-      {
-      label: 'anx_data',
-      data: mean(anx_data, age_data),
-      }
-    ],
-  },
-});
+// const c1 = document.getElementById('c1')
+// new Chart(c1, {
+//   type: 'line',
+//   data: {
+//     labels: r(age_data), 
+//     datasets: [
+//       {
+//       label: 'anx_data',
+//       data: mean(anx_data, age_data),
+//       }
+//     ],
+//   },
+//   options: options,
+// });

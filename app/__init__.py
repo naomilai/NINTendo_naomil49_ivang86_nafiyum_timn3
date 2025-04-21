@@ -58,6 +58,7 @@ def demo():
     age_data = get_attribute('Age')
     gender_data = get_attribute('Gender')
     occupation_data = get_attribute('Occupation')
+    
     return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user(),
     anx_data = anx_data, 
     age_data = age_data,
