@@ -18,14 +18,23 @@ def home():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
+        name = request.form['name']
         email = request.form['email']
         password = request.form['password']
+        # dob = request.form['dob']
+
+        is_error = False
 
         if register_user(email, password):
             session['user'] = email
             return redirect(url_for('home'))
         else:
             flash("User already exists. Try logging in.", "danger")
+            is_error = True
+        if (not is_error):
+            create_user(name, password, email, dob, json.dumps({}))
+            flash("Successfully created account! Redirected to home")
+            return redirect(url_for('home'))
 
     return render_template('signup.html')
 
