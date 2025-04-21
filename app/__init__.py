@@ -51,16 +51,16 @@ def login():
 
 @app.route('/demo')
 def demo():
-    # if not is_logged_in():
-    #     set_redirect(True)
-    #     return redirect(url_for('login'))
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
     anx_data = get_attribute('Anxiety Level (1-10)')
     age_data = get_attribute('Age')
     gender_data = get_attribute('Gender')
     occupation_data = get_attribute('Occupation')
-    
+
     return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user(),
-    anx_data = anx_data, 
+    anx_data = anx_data,
     age_data = age_data,
     gender_data = gender_data,
     occupation_data = occupation_data

@@ -1,18 +1,18 @@
 // methods
 function s(info, y){ // sorts info by y
-  var d = []; 
+  var d = [];
   for (const n in info){
     arr = [y[n], info[n]];
     d.push(arr);
   }
   d.sort()
-  
-  var new_dict = []; 
+
+  var new_dict = [];
   for (const n in d){
     const set = d[n]
     new_dict.push(set[1]);
-  } 
-  
+  }
+
   return new_dict;
 }
 
@@ -85,7 +85,7 @@ const age_means = document.getElementById('age_means');
 new Chart(age_means, {
   type: 'line',
   data: {
-    labels: r(age_data), 
+    labels: r(age_data),
     datasets: [
       {
       label: 'anxiety level',
