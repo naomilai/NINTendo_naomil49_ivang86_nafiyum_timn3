@@ -18,24 +18,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link active" href="/">Home</a>
-            <a class="nav-item nav-link" href="{{ url_for('stats') }}"> General Statistics</a>
-            <a class="nav-item nav-link" href="{{ url_for('demo') }}"> Demographics</a>
-            <a class="nav-item nav-link" href="{{ url_for('health') }}"> Mental Health History</a>
-            <a class="nav-item nav-link" href="{{ url_for('lifestyle') }}"> Lifestyle</a>
+            <a class="nav-item px-4 nav-link active" href="/">Home</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('stats') }}"> General Statistics</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('demo') }}"> Demographics</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('health') }}"> Mental Health History</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('lifestyle') }}"> Lifestyle</a>
           </div>
           <div class="ms-auto me-3"> <!-- login checks for displaying respective buttons -->
             {% if logged_in %}
                 <span class="navbar-text me-2 text-light">Welcome, {{ user }}</span>
                 <a class="btn btn-danger" href="{{ url_for('logout') }}">Logout</a>
             {% else %}
-                <a class="btn btn-primary" href="{{ url_for('signup') }}">Sign Up</a>
-                <a class="btn btn-primary" href= "{{ url_for('login') }}">Log In</a>
+                <a class="btn btn-primary px-4 me-1" href="{{ url_for('signup') }}">Sign Up</a>
+                <a class="btn btn-primary px-4 me-1" href= "{{ url_for('login') }}">Log In</a>
             {% endif %}
           </div>
         </div>
       </nav>
-      <p class="mainbody"><span style="font-size: 50px"> <!-- main txt -->
-      <em>Social Anxiety,</em></span> also known as social phobia, affects millions of people worldwide.</p>
+      <p class="mainbody" style="padding-top: 10%"><span style="font-size: 50px"> <!-- main txt -->
+      <em>&emsp;Social Anxiety,</em></span> also known as social phobia, affects millions of people worldwide. This dataset was compiled using a combination of survey responses, observational studies, and self-reported data. Participants provided information on lifestyle habits, stress, social anxiety symptoms, and personal experiences with mental health.</p>
+      <p class="mainbody">View trends on social anxiety based on general statistics, demographics, mental health history, and lifestyle choices.</p>
 </body>
 </html>

@@ -17,19 +17,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/">Home</a>
-            <a class="nav-item nav-link" href="{{ url_for('stats') }}">General Statistics</a>
-            <a class="nav-item nav-link" href="{{ url_for('demo') }}">Demographics</a>
-            <a class="nav-item nav-link" href="{{ url_for('health') }}">Mental Health History</a>
-            <a class="nav-item nav-link active" href="{{ url_for('lifestyle') }}">Lifestyle</a>
+            <a class="nav-item px-4 nav-link" href="/">Home</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('stats') }}"> General Statistics</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('demo') }}"> Demographics</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('health') }}"> Mental Health History</a>
+            <a class="nav-item px-4 nav-link active" href="{{ url_for('lifestyle') }}"> Lifestyle</a>
           </div>
           <div class="ms-auto me-3"> <!-- login checks for displaying respective buttons -->
             {% if logged_in %}
                 <span class="navbar-text me-2 text-light">Welcome, {{ user }}</span>
                 <a class="btn btn-danger" href="{{ url_for('logout') }}">Logout</a>
             {% else %}
-                <a class="btn btn-primary" href="{{ url_for('signup') }}">Sign Up</a>
-                <a class = "btn btn-primary" href= "{{ url_for('login') }}">Log In</a>
+                <a class="btn btn-primary px-4 me-1" href="{{ url_for('signup') }}">Sign Up</a>
+                <a class="btn btn-primary px-4 me-1" href= "{{ url_for('login') }}">Log In</a>
             {% endif %}
           </div>
         </div>
@@ -108,5 +108,7 @@
     who consumed high/low numbers of drinks reported overall higher/lower levels of anxiety.
    </p>
 
+      <p class="mainbody"><span style="font-size: 50px"> <!-- main txt -->
+      <em>test</em></span> test</p>
 </body>
 </html>

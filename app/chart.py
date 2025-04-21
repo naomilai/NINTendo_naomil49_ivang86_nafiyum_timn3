@@ -1,9 +1,14 @@
-# method: enhanced anxiety BIG !!
 import csv
 from flask import Flask, render_template
 
+import os
+
+cwd = os.getcwd()  # Get the current working directory (cwd)
+files = os.listdir(cwd)  # Get all the files in that directory
+print("Files in %r: %s" % (cwd, files))
+
 def get_enchanced_anxiety(): # returns dataset information as a list
-    with open("enhanced_anxiety_dataset.csv", "r") as file:
+    with open("enhanceanxdataset.csv", "r") as file:
         arr = list(csv.reader(file))
         return arr
 
@@ -13,9 +18,9 @@ def get_attribute(attribute): # returns all attribute data
     new_data = []
     for row in data[1:]:
         try:
-            add = float(row[n])
-            new_data.append(add)
+            new_data.append(float(row[n]))
         except ValueError:
+            new_data.append(row[n])
             continue
     return new_data
 
@@ -23,30 +28,25 @@ def view_attributes(): # prints list of names
     data = get_enchanced_anxiety()
     n = data[0]
     for item in n:
-        print(item, "\n")
+        print(item)
 
-def todict(x, y):
-    data = get_enchanced_anxiety()
-    x1 = data[0].index(x) #index of x in each row
-    y1 = data[0].index(y) # index of  y in each row
-    
-    new_x = []
-    new_y = []
-    for n in range(len(x)):
-        d.append([x[n], y[n]])
-    d = sorted(d)
-    return d
-
+# view_attributes()
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def route():
     anx_data = get_attribute('Anxiety Level (1-10)')
     age_data = get_attribute('Age')
-    # d = todict('Anxiety Level (1-10)', 'Age')
-    # print(d)
-    return render_template('testing_chart.html', anx_data = anx_data, age_data = age_data)
+    gender_data = get_attribute('Gender')
+    # occupation_data = get_attribute('Occupation')
+
+    return render_template('testing_chart.html',
+    anx_data = anx_data,
+    age_data = age_data,
+    gender_data = gender_data,
+    # occupation_data = occupation_data
+    )
 
 if __name__ == "__main__":
     app.run(debug=True)

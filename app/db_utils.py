@@ -20,14 +20,37 @@ def create_tables(db):
         c.execute('''
             CREATE TABLE IF NOT EXISTS users (
                 id INTEGER PRIMARY KEY AUTOINCREMENT
-                name_first TEXT NOT NULL COLLATE NOCASE
-                name_last TEXT NOT NULL COLLATE NOCASE
+                name TEXT NOT NULL COLLATE NOCASE
                 email TEXT NOT NULL UNIQUE COLLATE NOCASE
                 hash TEXT NOT NULL
                 dob DATE NOT NULL
                 profile JSON NOT NULL
             );
         ''')
+        c.execute('''
+            CREATE TABLE IF NOT EXISTS visualization (
+                record_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                category TEXT NOT NULL,
+                factor TEXT NOT NULL,
+                factor_value REAL NOT NULL,
+                generated_at DATE NOT NULL
+            );
+        ''')
+        c.execute('''
+            CREATE TABLE IF NOT EXISTS survey_responses (
+                response_id INTEGER PRIMARY KEY AUTOINCREMENT,
+                user_id INTEGER NOT NULL,
+                age INTEGER NOT NULL,
+                gender TEXT NOT NULL,
+                stress_level INTEGER NOT NULL CHECK(stress_level BETWEEN 1 AND 10),
+                anxiety_score INTEGER NOT NULL,
+                sleep_hours REAL NOT NULL,
+                social_interaction INTEGER NOT NULL,
+                date_submitted DATE NOT NULL,
+                FOREIGN KEY (user_id) REFERENCES users(id)
+            );
+        ''')
+
         db.commit()
     except sqlite3.Error as e:
         print(f"create_table: {e}")
@@ -59,11 +82,11 @@ def print_table(db_name, table_name):
 
 #-----------------------------------------------------------------------------------------
 
-def create_user(name_first, name_last, email, dob, profile):
+def create_user(name, password, email, dob, profile):
     db = sqlite3.connect(DB_FILE)
     try:
         c = db.cursor()
-        c.execute("INSERT INTO users (name_first, name_last, email, hash, dob, profile)")
+        c.execute("INSERT INTO users (name, email, hash, dob, profile) VALUES (?, ?, ?, ?, ?)", (name, pass_hash(password)[0], email, dob, profile))
         db.commit()
     except sqlite3.IntegrityError as e:
         print(name_first, name_last)
