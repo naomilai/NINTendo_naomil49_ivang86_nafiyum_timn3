@@ -8,7 +8,8 @@ files = os.listdir(cwd)  # Get all the files in that directory
 print("Files in %r: %s" % (cwd, files))
 
 def get_enchanced_anxiety(): # returns dataset information as a list
-    with open("enhanceanxdataset.csv", "r") as file:
+    file_path = os.path.join(os.path.dirname(__file__), "enhanceanxdataset.csv")
+    with open(file_path, "r") as file:
         arr = list(csv.reader(file))
         return arr
 
