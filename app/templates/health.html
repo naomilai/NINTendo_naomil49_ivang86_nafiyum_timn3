@@ -42,8 +42,8 @@
             {% endif %}
           </div>
         </div>
-      </nav>        
-      
+      </nav>
+
       <p class="titles"> <!-- main txt -->
         <em>Mental Health History</em></p>
       <p class="subtitles">Family History | Therapy Frequency | Stress </p>
@@ -71,10 +71,11 @@
         conditions. UNC Health psychiatric epidemiologist Anna Bauer, PhD, MPH. states
         that "Children of parents who have a diagnosed anxiety disorder can be as much
         as seven times more likely to develop an anxious disorder themselves"(https://healthtalk.unchealthcare.org/does-anxiety-run-in-families/).
-        In our dataset, participant data is held on how many therapy sessions the
-        participant attends per month, with responses ranging from 0 to 12. The mean number
-        of sessions per month was around 2.43, with a heavy right skew in distribution
-        meaning most responses were on the lower end (0 to 2).</p>
+        In our dataset, participant data is held on whether there is any history
+        of anxiety within their family by "True" and "False". Overall, across the data
+        roughly 53%, or 5847 individuals, answered true to having a family history of
+        anxiety.
+        </p>
         <h4> Anxiety Level Distribution w/ Family History </h4>
         <div> <!--- family history = yes distribution -->
           <canvas id="family_history"></canvas>
@@ -90,10 +91,11 @@
       how thoroughly it is maintained. Therapy is one of the leading and most
       beneficial ways to ensure overall quality of life, by dealing with mental
       health challenges and strong emotions.
-      In our dataset, participant data is held on whether there is any history
-      of anxiety within their family by "True" and "False". Overall, across the data
-      roughly 53%, or 5847 individuals, answered true to having a family history of
-      anxiety. </p>
+      In our dataset, participant data is held on how many therapy sessions the
+      participant attends per month, with responses ranging from 0 to 12. The mean number
+      of sessions per month was around 2.43, with a heavy right skew in distribution
+      meaning most responses were on the lower end (0 to 2).
+    </p>
       <h4> Therapy Sessions (per month) vs. Anxiety Level </h4>
       <div> <!--- therapy w means-->
         <canvas id="therapy_means"></canvas>
@@ -124,8 +126,8 @@
     </div>
     <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
     with how high/low a participant's stress level is, as few/many of the individuals
-    with high/low stress reported high/low levels of anxiety. </p> 
-    
+    with high/low stress reported high/low levels of anxiety. </p>
+
       <script src="../static/js/health.js" type="module"></script>
 </body>
 </html>
