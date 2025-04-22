@@ -1,8 +1,14 @@
 import csv
 from flask import Flask, render_template
 
+import os
+
+cwd = os.getcwd()  # Get the current working directory (cwd)
+files = os.listdir(cwd)  # Get all the files in that directory
+print("Files in %r: %s" % (cwd, files))
+
 def get_enchanced_anxiety(): # returns dataset information as a list
-    with open("enhanced_anxiety_dataset.csv", "r") as file:
+    with open("enhanceanxdataset.csv", "r") as file:
         arr = list(csv.reader(file))
         return arr
 
@@ -11,7 +17,7 @@ def get_attribute(attribute): # returns all attribute data
     n = data[0].index(attribute) # index of attribute in each row
     new_data = []
     for row in data[1:]:
-        try:           
+        try:
             new_data.append(float(row[n]))
         except ValueError:
             new_data.append(row[n])
@@ -35,8 +41,8 @@ def route():
     gender_data = get_attribute('Gender')
     # occupation_data = get_attribute('Occupation')
 
-    return render_template('testing_chart.html', 
-    anx_data = anx_data, 
+    return render_template('testing_chart.html',
+    anx_data = anx_data,
     age_data = age_data,
     gender_data = gender_data,
     # occupation_data = occupation_data

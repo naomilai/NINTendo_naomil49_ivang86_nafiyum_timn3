@@ -20,6 +20,10 @@ def register_user(email, password):
     users[email] = password
     return True
 
+def register_userv2(email, password):
+    conn = sqlite3.connect(DB_FILE)
+    
+
 def authenticate_user(email, password):
     return email in users and users[email] == password
 

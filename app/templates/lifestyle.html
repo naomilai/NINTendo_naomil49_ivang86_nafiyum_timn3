@@ -25,19 +25,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="/">Home</a>
-            <a class="nav-item nav-link" href="{{ url_for('stats') }}">General Statistics</a>
-            <a class="nav-item nav-link" href="{{ url_for('demo') }}">Demographics</a>
-            <a class="nav-item nav-link" href="{{ url_for('health') }}">Mental Health History</a>
-            <a class="nav-item nav-link active" href="{{ url_for('lifestyle') }}">Lifestyle</a>
+            <a class="nav-item px-4 nav-link" href="/">Home</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('stats') }}"> General Statistics</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('demo') }}"> Demographics</a>
+            <a class="nav-item px-4 nav-link" href="{{ url_for('health') }}"> Mental Health History</a>
+            <a class="nav-item px-4 nav-link active" href="{{ url_for('lifestyle') }}"> Lifestyle</a>
           </div>
           <div class="ms-auto me-3"> <!-- login checks for displaying respective buttons -->
             {% if logged_in %}
                 <span class="navbar-text me-2 text-light">Welcome, {{ user }}</span>
                 <a class="btn btn-danger" href="{{ url_for('logout') }}">Logout</a>
             {% else %}
-                <a class="btn btn-primary" href="{{ url_for('signup') }}">Sign Up</a>
-                <a class = "btn btn-primary" href= "{{ url_for('login') }}">Log In</a>
+                <a class="btn btn-primary px-4 me-1" href="{{ url_for('signup') }}">Sign Up</a>
+                <a class="btn btn-primary px-4 me-1" href= "{{ url_for('login') }}">Log In</a>
             {% endif %}
           </div>
         </div>
@@ -77,5 +77,80 @@
 
 
       <script src="../static/js/life.js" type="module"></script>
+      <!-- <p>
+        Information on how each different mental health factor affects social anxiety:
+        show sleep hours, physical activity, diet quality, alcohol use, caffeine intake, smoking habits, recent major life events
+        (maybe this is where we also put other health stuff? EX: heart rate, breathing rate, sweating level, dizziness)
+
+        Maybe, "build your own adventure" style, where as the user goes down the page,
+        they select a certain answer for their "character" and sees how it affects their
+        likelihood of anxiety (see demographics for a little more detail on this idea).
+      </p> -->
+
+      <p>
+        Although social anxiety is mainly associated with mental health, the quality
+        of someone's physical life can very greatly affect their mental wellbeing.
+        "Poor physical health can lead to higher stress levels, low energy and an
+        increased risk of mental health problems, creating a cycle that's tough to
+        break. This is why it's so important to take care of your body as part of
+        looking after your mind, ensuring that you feel better all around"(https://changemh.org/resources/physical-health-and-mental-health/).
+        In this dataset, a very large number of physical health related factors have been
+        collected from the many particpants, with the main ones we will look at being
+        hours slept, physical activity, and alcohol consumption.
+      </p>
+
+      <h3>Hours of Sleep</h3>
+      <p>
+        We are sure that everyone has at one point or another heard of how vital sleep
+        is to a generally healthy lifestyle, which is unquestionably true.
+        In this dataset, participants reported their hours slept per night, with responses
+        ranging from only 2.3 hours up to 11.3 hours. The biggest peak of reported
+        hours slept is at around 7 hours from around 1,830 particpants. The mean hours
+        slept is 6.65.
+      </p>
+        <b><h1>GRAPH GOES HERE</h1></b>
+      <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
+      with hours slept per night and anxiety, as few/many of the individuals that sleep more/less
+      , reporetd higher/lower levels of anxiety. </p>
+
+<br>
+
+    <h3>Physical Activity</h3>
+    <p>
+      Time and time again, a person's physical activity has been shown to correlate
+      with a generally higher quality of life, whether it be student athletes that get
+      higher grades, or active people who live longer and happier lives.
+      As such, in our dataset, participants reported their levels of physical activity
+      with the amount of hours they are physically active in a week. The responses range
+      from 0 to 10.1 hours, and heavily skews right, with 0-4 hours having around 8,000
+      total respondees, with a dramatic decline after that. This makes the mean of the
+      hours excersied weekly only 2.94.
+    </p>
+      <b><h1>GRAPH GOES HERE</h1></b>
+    <p><b>Graph analysis here.</b> As we can see, that high/low physical activity is/isn't
+    strongly/weakly correlated with anxiety, as few/many of the individuals that
+    excersied regularly/not regularly, reported high/low levels of anxiety. </p>
+
+<br>
+
+    <h3>Alcohol Consumption</h3>
+    <p>
+      Alcohol is a very potentially dangerous influence on any person's mental and
+      physical health, since it can be very harmful in excess. Still, it is a
+      socially acceptable drug, that is consumed by many ages. Thus, it is an important
+      factor to consider in a person's potential health.
+      In our dataset, participants logged the amount of drinks that they had every week,
+      to help judge how much of an impact this may have. This ranged from 0 to 19 drinks
+      and had decently even distribution of around 550 responses for each number in the
+      range, making the mean a 9.7, close to the middle of that range.
+    </p>
+    <b><h1>GRAPH GOES HERE</h1></b>
+    <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
+    with how much/little alcohol a participant consumes weekly, as few/many of the individuals
+    who consumed high/low numbers of drinks reported overall higher/lower levels of anxiety.
+   </p>
+
+      <p class="mainbody"><span style="font-size: 50px"> <!-- main txt -->
+      <em>test</em></span> test</p>
 </body>
 </html>

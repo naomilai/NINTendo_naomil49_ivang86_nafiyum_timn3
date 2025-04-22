@@ -18,14 +18,23 @@ def home():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
+        name = request.form['name']
         email = request.form['email']
         password = request.form['password']
+        # dob = request.form['dob']
+
+        is_error = False
 
         if register_user(email, password):
             session['user'] = email
             return redirect(url_for('home'))
         else:
             flash("User already exists. Try logging in.", "danger")
+            is_error = True
+        if (not is_error):
+            create_user(name, password, email, dob, json.dumps({}))
+            flash("Successfully created account! Redirected to home")
+            return redirect(url_for('home'))
 
     return render_template('signup.html')
 
@@ -54,14 +63,14 @@ def demo():
     if not is_logged_in():
         set_redirect(True)
         return redirect(url_for('login'))
-
+        
     anx_data = get_attribute('Anxiety Level (1-10)')
     age_data = get_attribute('Age')
     gender_data = get_attribute('Gender')
     occupation_data = get_attribute('Occupation')
 
     return render_template('demo.html', logged_in=is_logged_in(), user=get_logged_in_user(),
-    anx_data = anx_data, 
+    anx_data = anx_data,
     age_data = age_data,
     gender_data = gender_data,
     occupation_data = occupation_data
