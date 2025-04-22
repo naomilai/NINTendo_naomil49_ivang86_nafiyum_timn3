@@ -1,8 +1,7 @@
 import {
-    s, mean, r, l, hist, opt
-} from "./charts.js";
+  s, mean, r, box, opt
+} from "./charts.js"; 
   
-  // charts  
   const sleep_means = document.getElementById('sleep_means');
   new Chart(sleep_means, {
     type: 'line',

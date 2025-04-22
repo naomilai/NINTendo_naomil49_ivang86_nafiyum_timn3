@@ -1,25 +1,6 @@
 import {
-    s, mean, l, hist, opt
-} from "./charts.js";
-
-function r(arr){ // remove extra values
-    if(arr == anx_data){
-        return [1,2,3,4,5,6,7,8,9,10];
-    }
-    if(arr==therapy_data){
-      return [1,2,3,4,5,6,7,8,9,10,11,12]
-    }
-    var a = arr.slice()
-    a.sort()
-    var d = []
-    for(const n in a){
-        let num = a[n]
-        if (!d.includes(num)){
-            d.push(num)
-        }
-    }
-    return d
-  }
+  s, mean, r, box, opt
+} from "./charts.js"; 
 
 const sleep_means = document.getElementById('sleep_means');
 new Chart(sleep_means, {
