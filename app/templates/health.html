@@ -6,7 +6,7 @@
     <title>Statistics by Mental Health History | NINTendo</title>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh5U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../static/css/style.css">
@@ -44,9 +44,10 @@
         </div>
       </nav>
 
+      <div class="content">
       <p class="titles"> <!-- main txt -->
         <em>Mental Health History</em></p>
-      <p class="subtitles">Family History | Therapy Frequency | Stress </p>
+      <p class="subtitles"> Family History | Therapy Frequency | Stress Level </p>
 
       <!-- <p>
         Information on how each different mental health factor affects social anxiety:
@@ -65,7 +66,7 @@
         gathering data from the participants, such as family history of anxiety, therapy frequency, stress level, and more.
       </p>
 
-      <h3>Family history of anxiety</h3>
+      <h2>Family history of anxiety</h2>
       <p>Undoubtedly, genetics and family history of mental health can be one of
         the most prominent factors in a person's risks to developing similar
         conditions. UNC Health psychiatric epidemiologist Anna Bauer, PhD, MPH. states
@@ -76,7 +77,7 @@
         roughly 53%, or 5847 individuals, answered true to having a family history of
         anxiety.
         </p>
-        <h4> Anxiety Level Distribution w/ Family History </h4>
+        <h5> Anxiety Level Distribution w/ Family History </h5>
         <div> <!--- family history = yes distribution -->
           <canvas id="family_history"></canvas>
         </div>
@@ -86,7 +87,7 @@
 
 <br>
 
-    <h3>Therapy Frequency</h3>
+    <h2>Therapy Frequency</h2>
     <p> Another important aspect of an individual's quality of mental health is
       how thoroughly it is maintained. Therapy is one of the leading and most
       beneficial ways to ensure overall quality of life, by dealing with mental
@@ -96,7 +97,7 @@
       of sessions per month was around 2.43, with a heavy right skew in distribution
       meaning most responses were on the lower end (0 to 2).
     </p>
-      <h4> Therapy Sessions (per month) vs. Anxiety Level </h4>
+      <h5> Therapy Sessions (per month) vs. Anxiety Level </h5>
       <div> <!--- therapy w means-->
         <canvas id="therapy_means"></canvas>
       </div>
@@ -107,7 +108,7 @@
 
 <br>
 
-    <h3>Stress Level</h3>
+    <h2>Stress Level</h2>
     <p> Though anxiety is a disorder that stands separate from others, both in
       possible causes but also in steps taken to help treat it, other factors,
       specifically similar mental health issues, can very often be corresponding
@@ -120,13 +121,15 @@
       identifying themselves among each of those ratings. Though somewhat leaning
       towards the higher values, the mean ends up at 5.86, which still makes it a
     fairly even and representative set of data. </p>
-    <h4> Stress Level vs. Anxiety Level </h4>
+    <h5> Stress Level vs. Anxiety Level </h5>
     <div> <!--- stress w means-->
       <canvas id="stress_means"></canvas>
     </div>
     <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
     with how high/low a participant's stress level is, as few/many of the individuals
     with high/low stress reported high/low levels of anxiety. </p>
+
+    </div>
 
       <script src="../static/js/health.js" type="module"></script>
 </body>

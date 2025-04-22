@@ -70,6 +70,11 @@ ivanG -- 2025-04-22 18:50
 * Fixed graph explanations for demo page
 * Other cleaning and fixing site elements
 * Started script for video recording
+naomiL -- 2025-04-22 19:10
+* Fixed sorting + graphs
+* Modified some axes
+* Combined family history graphs
+* Page styling
 
 DESIGN REVISIONS THUS FAR:
 * fixed user registration table to only include relevant information by removing column for social security

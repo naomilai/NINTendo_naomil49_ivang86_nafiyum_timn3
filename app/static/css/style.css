@@ -18,17 +18,19 @@
 }
 
 .graphs { /* graphs */
-  border: 1px solid black
+  border: 1px solid black;
   height: 2px;
   width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .titles {/* titles */
   font-family: "Times New Roman", Times, serif;
   font-size: 75px;
   line-height: 130px;
-  padding-right: 30%;
-  padding-left: 30%;
+  /* padding-right: 30%; */
+  /* padding-left: 30%; */
   padding-top: 3%;
   margin: auto;
   text-align: center;
@@ -37,10 +39,25 @@
 .subtitles {/* subtitles */
   font-family: "Times New Roman", Times, serif;
   font-size: 35px;
-  line-height: 10px;
-  padding-right: 30%;
-  padding-left: 30%;
+  /* line-height: 10px; */
+  /* padding-right: 30%; */
+  /* padding-left: 30%; */
   margin: auto;
   text-align: center;
-  padding-bottom: 5%;
+  /* padding-bottom: 5%; */
+}
+
+.content{
+  text-align: center;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
+
+h5, p{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+h2, h5{
+  font-family: "Times New Roman", Times, serif;
 }
