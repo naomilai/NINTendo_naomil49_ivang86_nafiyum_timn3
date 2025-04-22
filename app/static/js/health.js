@@ -1,80 +1,26 @@
-// methods
-function s(info, y){ // sorts info by y
-    var d = []; 
-    for (const n in info){
-      arr = [y[n], info[n]];
-      d.push(arr);
-    }
-    d.sort()
-    
-    var new_dict = []; 
-    for (const n in d){
-      const set = d[n]
-      new_dict.push(set[1]);
-    } 
-    
-    return new_dict;
-  }
-  
-  function mean(x, arr){ // returns means of x by y
-    y = arr.slice().sort()
-    info = s(x.slice(), arr)
-    counter = [info[0],1]
-    means = []
-    for (let n=1; n<y.length; n++){
-      if(n!=y.length-1 && y[n]==y[n-1]){
-        counter[0] += info[n]
-        counter[1] ++
-      } else{
-        console.log("age:",y[n-1],"anx",info[n],counter,counter[0] / counter[1])
-        means.push(counter[0] / counter[1]);
-        counter[0] = info[n];
-        counter[1] = 1;
-        n++;
-      }
-    }
-  
-    means = means.map((x) => Math.round(x*100) / 100);
-    return means;
-  }
-  
-  function r(arr){ // remove extra values
-    if(arr == anx_data){
-        console.log('anx');
-        return [1,2,3,4,5,6,7,8,9,10];
-    }
-    if(arr == therapy_data){
-        return [1,2,3,4,5,6,7,8,9,10,11,12]
-    }
-    a = arr.slice()
-    a.sort()
-    d = []
-    for(const n in a){
-        num = a[n]
-        if (!d.includes(num)){
-            d.push(num)
-        }
-    }
-    // console.log(d)
-    return d
-  }
+import {
+  s, mean, l, hist, options
+} from "./charts.js";
 
-  function hist(x, arr, filter){ // x: family history, arr: anxiety level, filter: yes/no
-    d = [0,0,0,0,0,0,0,0,0,0]
-    for(const n in x){
-        if(x[n] == filter){
-            anxiety = arr[n]
-            d[anxiety-1]++
-        }
-    }
-    console.log(d)
-    return d
+function r(arr){ // remove extra values
+  if(arr == anx_data){
+      return [1,2,3,4,5,6,7,8,9,10];
   }
-  
-  // styling
-  options = {
-    animation: false,
+  if(arr==therapy_data){
+    return [1,2,3,4,5,6,7,8,9,10,11,12]
   }
+  var a = arr.slice()
+  a.sort()
+  var d = []
+  for(const n in a){
+      let num = a[n]
+      if (!d.includes(num)){
+          d.push(num)
+      }
+  }
+  // console.log(d)
+  return d
+}
   
   // charts  
   // health
@@ -158,16 +104,15 @@ function s(info, y){ // sorts info by y
     },
   })
 
+  
   const therapy_all = document.getElementById('therapy_all');
   new Chart(therapy_all,{
     type: 'line',
     data: {
-      labels: therapy_data,
       labels: therapy_data.toSorted(),
       datasets: [
         {
           label: 'anxiety level',
-          data: anx_data,
           data: s(anx_data, therapy_data),
         }
       ],

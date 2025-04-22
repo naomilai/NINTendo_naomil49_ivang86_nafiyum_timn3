@@ -51,9 +51,9 @@ def login():
 
 @app.route('/demo')
 def demo():
-    # if not is_logged_in():
-    #     set_redirect(True)
-    #     return redirect(url_for('login'))
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
 
     anx_data = get_attribute('Anxiety Level (1-10)')
     age_data = get_attribute('Age')
@@ -69,9 +69,9 @@ def demo():
 
 @app.route('/health')
 def health():
-    # if not is_logged_in():
-    #     set_redirect(True)
-    #     return redirect(url_for('login'))
+    if not is_logged_in():
+        set_redirect(True)
+        return redirect(url_for('login'))
 
     anx_data = get_attribute('Anxiety Level (1-10)')
     family_data = get_attribute('Family History of Anxiety')
@@ -90,11 +90,32 @@ def lifestyle():
     if not is_logged_in():
         set_redirect(True)
         return redirect(url_for('login'))
-    return render_template("lifestyle.html", logged_in=is_logged_in(), user=get_logged_in_user())
+
+    anx_data = get_attribute('Anxiety Level (1-10)')
+    sleep_data = get_attribute('Sleep Hours')
+    alcohol_data = get_attribute('Alcohol Consumption (drinks/week)')
+    caf_data = get_attribute('Caffeine Intake (mg/day)')
+    
+    return render_template("lifestyle.html", logged_in=is_logged_in(), user=get_logged_in_user(),
+    anx_data = anx_data,
+    sleep_data = sleep_data,
+    caf_data =  caf_data,
+    alcohol_data = alcohol_data
+    )
 
 @app.route('/stats')
 def stats():
-    return render_template("stats.html", logged_in=is_logged_in(), user=get_logged_in_user())
+    anx_data = get_attribute('Anxiety Level (1-10)')
+    sleep_data = get_attribute('Sleep Hours')
+    therapy_data = get_attribute('Therapy Sessions (per month)')
+    occupation_data = get_attribute('Occupation')
+
+    return render_template("stats.html", logged_in=is_logged_in(), user=get_logged_in_user(),
+    anx_data = anx_data,
+    sleep_data = sleep_data,
+    therapy_data = therapy_data,
+    occupation_data = occupation_data
+    )
 
 @app.route('/logout')
 def logout():
