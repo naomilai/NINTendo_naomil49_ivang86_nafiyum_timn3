@@ -43,6 +43,10 @@
         </div>
       </nav>
 
+      <p class="titles"> <!-- main txt -->
+        <em>Demographics</em></p>
+      <p class="subtitles">Age | Gender | Occupation</p>
+
       <!-- <p>
         Information on how each different demographic factor affects social anxiety:
         show gender, age, occupation breakdowns
@@ -72,7 +76,10 @@
         is 40.2, and while there are several peaks at certain age ranges (18, 26, 32, 42, 48, 56, 63)
         of around 700 participants, there are fair amounts of answers in the other in between ages of around 520 participants.
       </p>
-        <b><h1>GRAPH GOES HERE</h1></b>
+      <h4> Avg. Anxiety by Age</h4>
+      <div> <!--- age w means-->
+        <canvas class="graphs" id="age_means"></canvas>
+      </div>
       <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
       with age and anxiety, as few/many of the individuals that are older/younger
       , registered higher/lower levels of anxiety. </p>
@@ -88,7 +95,10 @@
       very even distribution amongst these three options, with 33% of participants identifying
       as "Male" and 33% as "Other", while the remaning 34% identified as "Female".
     </p>
-      <b><h1>GRAPH GOES HERE</h1></b>
+    <h4> Avg. Anxiety by Gender</h4>
+    <div> <!--- gender w means-->
+      <canvas class="graphs" id="gender_means"></canvas>
+    </div>
     <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
     between gender and anxiety, as few/many of the individuals that identified
     as Male/Female/Other registered high/low levels of anxiety. </p>
@@ -107,32 +117,14 @@
       The most common of these was "Musician" and "Artist", with 8% of participants. However,
       there are a decent amount of other ocupations represented
     </p>
-    <b><h1>GRAPH GOES HERE</h1></b>
+    <h4> Avg. Anxiety by Occupation</h4>
+    <div> <!--- occupation w means-->
+      <canvas class="graphs" id="occupation_means"></canvas>
+    </div>
     <p><b>Graph analysis here.</b> As we can see, there is/isn't a strong/weak correlation
     with how high/low a participant's occupation is, as few/many of the individuals
     with XYZ job(s) reported higher/lower levels of anxiety, as compared to
     thos who work as ABC jobs. </p>
-
-      <p class="titles"> <!-- main txt -->
-      <em>Demographics</em></p>
-      <p class="subtitles">Age | Gender | Occupation</p>
-      <!-- charts -->
-
-      <div> <!-- all age data-->
-        <canvas class="graphs" id="age_all"></canvas>
-      </div>
-
-      <div> <!--- age w means-->
-        <canvas class="graphs" id="age_means"></canvas>
-      </div>
-
-      <div> <!--- gender w means-->
-        <canvas class="graphs" id="gender_means"></canvas>
-      </div>
-
-      <div> <!--- occupation w means-->
-        <canvas class="graphs" id="occupation_means"></canvas>
-      </div>
 
       <script src="../static/js/demo.js" type="module"></script>
 </body>

@@ -85,13 +85,15 @@ def health():
     anx_data = get_attribute('Anxiety Level (1-10)')
     family_data = get_attribute('Family History of Anxiety')
     medication_data = get_attribute('Medication')
-    therapy_data = get_attribute('Therapy Sessions (per month)')
+    therapy_data = get_attribute('Therapy Sessions (per month)')    
+    stress_data = get_attribute('Stress Level (1-10)')
 
     return render_template('health.html', logged_in=is_logged_in(), user=get_logged_in_user(),
     anx_data = anx_data,
     family_data = family_data,
     medication_data = medication_data,
-    therapy_data = therapy_data
+    therapy_data = therapy_data,
+    stress_data = stress_data
     )
 
 @app.route('/lifestyle')
@@ -104,12 +106,14 @@ def lifestyle():
     sleep_data = get_attribute('Sleep Hours')
     alcohol_data = get_attribute('Alcohol Consumption (drinks/week)')
     caf_data = get_attribute('Caffeine Intake (mg/day)')
+    phys_data = get_attribute('Physical Activity (hrs/week)')
     
     return render_template("lifestyle.html", logged_in=is_logged_in(), user=get_logged_in_user(),
     anx_data = anx_data,
     sleep_data = sleep_data,
     caf_data =  caf_data,
-    alcohol_data = alcohol_data
+    alcohol_data = alcohol_data,
+    phys_data = phys_data
     )
 
 @app.route('/stats')

@@ -4,19 +4,19 @@ import {
 
   // charts
   // age
-  const age_all = document.getElementById('age_all');
-  new Chart(age_all,{
-    type: 'line',
-    data: {
-      labels: age_data.toSorted(),
-      datasets: [
-        {
-          label: 'anxiety level',
-          data: s(anx_data, age_data),
-        }
-      ],
-    },
-  });
+  // const age_all = document.getElementById('age_all');
+  // new Chart(age_all,{
+  //   type: 'line',
+  //   data: {
+  //     labels: age_data.toSorted(),
+  //     datasets: [
+  //       {
+  //         label: 'anxiety level',
+  //         data: s(anx_data, age_data),
+  //       }
+  //     ],
+  //   },
+  // });
   
   const age_means = document.getElementById('age_means');
   new Chart(age_means, {

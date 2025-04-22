@@ -63,6 +63,9 @@ naomiL -- 2025-04-22 1:00
   * Charts for demographics (4), mental health history (6), and lifestyle (6)
   * Line chart, histogram, bar
 * Adjusted flask/html for sending data
+naomiL -- 2025-04-22 13:00
+* Inserted graphs into appropriate html
+* NEED TO FIX SORTING (means, sorts ??) -> fix age, stress level, and entire lfiestlye (x axes labels)
 
 DESIGN REVISIONS THUS FAR:
 * fixed user registration table to only include relevant information by removing column for social security

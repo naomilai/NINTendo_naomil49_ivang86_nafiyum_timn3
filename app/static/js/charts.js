@@ -17,7 +17,7 @@ export function s(info, y){ // sorts info by y
 }
 
 export function mean(x, arr){ // returns means of x by y
-  var y = arr.slice().sort()
+  var y = sorts(arr)
   var info = s(x.slice(), arr)
   var counter = [info[0],1]
   var means = []
@@ -42,8 +42,7 @@ export function r(arr){ // remove extra values
   if(arr == anx_data){
       return [1,2,3,4,5,6,7,8,9,10];
   }
-  var a = arr.slice()
-  a.sort()
+  var a = sorts(arr)
   var d = []
   for(const n in a){
       let num = a[n]
@@ -81,6 +80,10 @@ export function l(info, y){
   } 
   
   return new_dict;
+}
+
+export function sorts(arr){
+  return arr.slice().sort()
 }
 
 export const opt = {

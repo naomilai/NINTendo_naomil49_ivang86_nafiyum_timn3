@@ -1,5 +1,5 @@
 import {
-  s, mean, l, hist, opt
+  s, mean, l, hist, opt, sorts
 } from "./charts.js";
 
 function r(arr){ // remove extra values
@@ -9,8 +9,10 @@ function r(arr){ // remove extra values
   if(arr==therapy_data){
     return [1,2,3,4,5,6,7,8,9,10,11,12]
   }
-  var a = arr.slice()
-  a.sort()
+  // if(arr==stress_data){
+  //   return [1,2,3,4,5,6,7,8,9,10]
+  // }
+  var a = sorts(arr)
   var d = []
   for(const n in a){
       let num = a[n]
@@ -64,64 +66,6 @@ function r(arr){ // remove extra values
     },
   })
   
-  const medication = document.getElementById('medication');
-  new Chart(medication,{
-    type: 'bar',
-    data: {
-      labels: r(anx_data),
-      datasets: [{
-        label: '# reported',
-        data: hist(medication_data, anx_data, 'Yes'),
-      }]
-    },
-    options: {
-      animation: false,
-      scales: {
-        y: {
-            suggestedMin: 0,
-            suggestedMax: 1400
-        }}
-    },
-  })
-
-  const medication2 = document.getElementById('medication2');
-  new Chart(medication2,{
-    type: 'bar',
-    data: {
-      labels: r(anx_data),
-      datasets: [{
-        label: '# reported',
-        data: hist(medication_data, anx_data, 'No'),
-      }]
-    },
-    options: {
-      animation: false,
-      scales: {
-        y: {
-            suggestedMin: 0,
-            suggestedMax: 1400
-        }}
-    },
-  })
-
-  
-  const therapy_all = document.getElementById('therapy_all');
-  new Chart(therapy_all,{
-    type: 'line',
-    data: {
-      labels: therapy_data.toSorted(),
-      datasets: [
-        {
-          label: 'anxiety level',
-          data: s(anx_data, therapy_data),
-        }
-      ],
-    },
-    options: {
-      animation: false,
-    },
-  });
-  
   const therapy_means = document.getElementById('therapy_means');
   new Chart(therapy_means, {
     type: 'line',
@@ -131,6 +75,23 @@ function r(arr){ // remove extra values
         {
         label: 'avg anxiety level',
         data: mean(anx_data, therapy_data),
+        }
+      ],
+    },
+    options: {
+      animation: false,
+    },
+  });
+
+  const stress_means = document.getElementById('stress_means');
+  new Chart(stress_means, {
+    type: 'line',
+    data: {
+      labels: r(stress_data), 
+      datasets: [
+        {
+        label: 'avg anxiety level',
+        data: mean(anx_data, stress_data),
         }
       ],
     },
