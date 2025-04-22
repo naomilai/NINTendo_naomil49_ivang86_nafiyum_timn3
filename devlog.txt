@@ -57,6 +57,12 @@ ivanG -- 2025-04-20 17:00
 * Finished writing actual info and analysis for demographics page
 ivanG -- 2025-04-20 20:16
 * Finished writing info and analysis for lifestyle page
+naomiL -- 2025-04-22 1:00
+* Wrote functions for calculations/organizing data for graphs
+* Implemented in JS 
+  * Charts for demographics (4), mental health history (6), and lifestyle (6)
+  * Line chart, histogram, bar
+* Adjusted flask/html for sending data
 
 DESIGN REVISIONS THUS FAR:
 * fixed user registration table to only include relevant information by removing column for social security
