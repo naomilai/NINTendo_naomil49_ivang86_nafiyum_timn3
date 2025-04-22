@@ -1,5 +1,5 @@
 import {
-  s, mean, l, hist, options
+  s, mean, l, hist, opt
 } from "./charts.js";
 
 function r(arr){ // remove extra values

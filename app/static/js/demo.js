@@ -42,8 +42,9 @@ import {
         data: mean(anx_data, gender_data),
       }]
     },
-    options: options
+    options: opt,
   })
+
   // occupation
   const  occupation_means = document.getElementById('occupation_means');
   new Chart(occupation_means,{
