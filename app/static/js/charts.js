@@ -50,9 +50,6 @@ export function mean(arr1, arr2){ // means of arr1 (ex. anx) by arr2 (ex. age)
       counter[0] += d[n][1]
       counter[1] ++
     } else{
-      // console.log(d[n][0], d[n-1][0])
-      console.log(d[n-1][0], counter)
-    // console.log('age', d[n-1][0],counter,counter[0] / counter[1])
       means.push(counter[0] / counter[1]);
       counter[0] = d[n][1];
       counter[1] = 1;

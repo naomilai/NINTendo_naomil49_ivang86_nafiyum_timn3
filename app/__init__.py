@@ -122,12 +122,14 @@ def stats():
     sleep_data = get_attribute('Sleep Hours')
     therapy_data = get_attribute('Therapy Sessions (per month)')
     occupation_data = get_attribute('Occupation')
+    family_data = get_attribute('Family History of Anxiety')
 
     return render_template("stats.html", logged_in=is_logged_in(), user=get_logged_in_user(),
     anx_data = anx_data,
     sleep_data = sleep_data,
     therapy_data = therapy_data,
-    occupation_data = occupation_data
+    occupation_data = occupation_data,
+    family_data = family_data
     )
 
 @app.route('/logout')

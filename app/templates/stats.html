@@ -14,7 +14,7 @@
       var anx_data = {{ anx_data }};
       var sleep_data = {{ sleep_data }};
       var occupation_data = {{ occupation_data | safe }};
-      var therapy_data = {{ therapy_data }};
+      var family_data = {{ family_data | safe }};
     </script>
   </head>
 <body>
@@ -57,11 +57,10 @@
         <canvas id="occupation_means"></canvas>
       </div>
 
-      <h5> Therapy Sessions (per month) vs. Anxiety Level </h5>
-      <div class="chart"> <!--- therapy w means-->
-        <canvas id="therapy_means"></canvas>
-      </div>
-    </div>
+      <h5> Anxiety Level Distribution w/ Family History </h5>
+        <div> <!--- family history = yes distribution -->
+          <canvas id="family_history"></canvas>
+        </div>
 
       <script src="../static/js/stats.js" type="module"></script>
       <!-- 
