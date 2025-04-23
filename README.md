@@ -13,6 +13,15 @@ Our group will examine several features such as demographics, lifestyle, and men
 
 We will communicate this information through an awesome website. Each category will be a separate page including a visualization and outlines of general trends. There will be a “General Information” page that simply displays the graphs with shorter descriptions, which logged-out users would be able to access. All category pages will be inaccessible for users who are not logged in. Log In/Sign up/Log out pages will be provided. Categorized pages will include much more in-depth information (i.e. the “Lifestyle” page would include detailed information on Sleep hours, Physical activity, Diet quality, etc.)
 
+### FEATURE SPOTLIGHT
+* Hashing user credentials at line 32 in file `auth_utils.py`
+* Grouped bar chart in file `health.js`
+* Data is parsed using methods from file `chart.py` and sorted/modified using methods from file `static/charts.js`
+
+### KNOWN BUGS/ISSUES
+* When logging in, the user may occassionally receive invalid credential errors. Press 'login' twice to successfully log in. 
+
+
 
 ## Install Guide
   To install, go to the top of the page and click the green button that says "Code". In the dropdown that appears, click "Download Zip" at the bottom. Extract the zip from your downloads into your home directory. <br>
