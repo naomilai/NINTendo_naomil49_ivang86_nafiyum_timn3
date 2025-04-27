@@ -31,6 +31,10 @@ OR
   To clone the repository, go to the top of the page and click the green button that says "Code". In the dropdown that appears, choose either "HTTPS" or "SSH" under the "Clone" section and copy the provided URL. Open up your computer's terminal and type "git clone {URL HERE}"
   
 ## Launch Codes
+Site can be viewed at https://p4.nlai.tech/ 
+
+OR
+
   1. Make a python virtual environment
 
       a. Open up your device's terminal
